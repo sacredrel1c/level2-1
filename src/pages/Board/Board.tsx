@@ -30,6 +30,12 @@ const state = {
 };
 
 function Board() {
-  return <List title={state.lists[0].title} cards={state.lists[0].cards} />;
+  const lists = state.lists.map((list) => <List title={list.title} cards={list.cards} key={list.id} />);
+  return (
+    <div>
+      <h1>{state.title}</h1>
+      {lists}
+    </div>
+  );
 }
 export default Board;

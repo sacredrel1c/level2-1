@@ -1,10 +1,17 @@
 import React from 'react';
-import {ICard} from '../../../../common/interfaces/ICard';
+import { ICard } from '../../../../common/interfaces/ICard';
 
-function List({ title }: string, { cards }: ICard[]) {
+function List(props: { title: string; cards: ICard[] }) {
   return (
     <h2>
-      Hello list! {title} {cards}
+      List is {props.title}
+      <hr />
+      {props.cards.map((card) => (
+        <>
+          <div>{card.id}</div>
+          <div>{card.title}</div>
+        </>
+      ))}
     </h2>
   );
 }
