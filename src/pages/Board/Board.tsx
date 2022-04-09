@@ -1,4 +1,5 @@
 import React from 'react';
+import List from './components/List/List';
 
 const state = {
   title: 'Моя тестовая доска',
@@ -29,6 +30,6 @@ const state = {
 };
 
 function Board() {
-  return <h1>{state.title}</h1>;
+  return <List title={state.lists[0].title} cards={state.lists[0].cards} />;
 }
 export default Board;
