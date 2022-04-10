@@ -34,7 +34,7 @@ function Board() {
   return (
     <div>
       <h1>{state.title}</h1>
-      {lists}
+      <div>{lists}</div>
     </div>
   );
 }
