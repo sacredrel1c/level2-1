@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './components/List/List';
+import './components/Board/board.scss';
 
 const state = {
   title: 'Моя тестовая доска',
@@ -34,7 +35,10 @@ function Board() {
   return (
     <div>
       <h1>{state.title}</h1>
-      <div>{lists}</div>
+      <div className="board-container">
+        {lists}
+        <button>Добавить список</button>
+      </div>
     </div>
   );
 }
