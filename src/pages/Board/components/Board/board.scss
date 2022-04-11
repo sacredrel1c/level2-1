@@ -1,5 +1,12 @@
 .board-container {
     display: flex;
     justify-content: space-between;
-    margin: 25px 10%;
+    max-width: 100%;
+    padding: 0 30px;
+    margin: 0 30px;
+    scroll-direction: horizontal;
+}
+button {    
+    min-width: 272px;
+    margin: 0 4px;
 }

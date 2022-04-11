@@ -2,6 +2,18 @@
     display: flex;
     justify-content: start;
     flex-direction: column;
+    border: 1px solid rgb(93, 93, 93);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 4px;
+    background: repeating-linear-gradient(
+  45deg,
+  #d0cccc,
+  #929398 1px,
+  #d7d9e6 1px,
+  #a1a1a8 1px
+);
+min-width: 252px;
 }
 .list-title {
     text-align: left;
