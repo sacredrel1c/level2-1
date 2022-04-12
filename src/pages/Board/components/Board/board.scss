@@ -5,9 +5,15 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  margin: 0 30px;
 }
 button {
   min-width: 272px;
   max-height: 50px;
   margin: 0 4px;
+}
+h1 {
+  color: #172b4d;
+    font-weight: 700;
+    line-height: 32px;
 }

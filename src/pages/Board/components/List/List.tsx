@@ -15,6 +15,7 @@ function List(props: { title: string; cards: ICard[] }) {
           <div>{card.title}</div>
         </div>
       ))}
+      <a className="add-card">Добавить карточку</a>
     </div>
   );
 }
