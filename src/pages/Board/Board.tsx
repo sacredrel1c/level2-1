@@ -38,7 +38,7 @@ function Board() {
       <div className="board-container">
         <div className="board-container-row">
           {lists}
-          <button>Добавить список</button>
+          <a className="add-list">Добавить список</a>
         </div>
       </div>
     </div>
