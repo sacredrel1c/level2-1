@@ -1,27 +1,40 @@
 .list-container {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    border: 1px solid rgb(93, 93, 93);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0 4px;
-    background: repeating-linear-gradient(
-  45deg,
-  #d0cccc,
-  #929398 1px,
-  #d7d9e6 1px,
-  #a1a1a8 1px
-);
-min-width: 252px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0 4px;
+  background-color: #ebecf0;
+  border-radius: 3px;
+  min-width: 252px;
+  cursor: pointer;
+  height: fit-content;
 }
 .list-title {
-    text-align: left;
+  text-align: left;
+  border-bottom: 1px solid gray;
+  flex: 0 0 auto;
+  min-height: 20px;
+  padding: 10px 8px;
+  position: relative;
+  color: #172b4d;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
 }
 .list-content {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #091e4240;
+  margin-bottom: 8px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  text-decoration: none;
+  z-index: 0;
 }
-.list-content div{
-    margin: 5px;
+.list-content div {
+  margin: 5px;
 }

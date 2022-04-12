@@ -36,8 +36,10 @@ function Board() {
     <div>
       <h1>{state.title}</h1>
       <div className="board-container">
-        {lists}
-        <button>Добавить список</button>
+        <div className="board-container-row">
+          {lists}
+          <button>Добавить список</button>
+        </div>
       </div>
     </div>
   );
