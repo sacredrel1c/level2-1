@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import List from './components/List/List';
 import './components/Board/board.scss';
 
@@ -38,7 +40,10 @@ function Board() {
       <div className="board-container">
         <div className="board-container-row">
           {lists}
-          <a className="add-list">Добавить список</a>
+          <a className="add-list">
+            <FontAwesomeIcon icon={faAdd} />
+            <span>Добавить список</span>
+          </a>
         </div>
       </div>
     </div>
