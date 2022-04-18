@@ -1,7 +1,15 @@
 .home-board-container {
-  width: 200px;
-  height: 100px;
-  margin: 10px;
+  width: 300px;
+  height: 150px;
+  margin: 12px;
   border-radius: 6px;
   border: 1px solid black;
+}
+.board-title {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  align-items: center;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import List from './components/List/List';
@@ -34,9 +35,11 @@ const state = {
 
 function Board() {
   const lists = state.lists.map((list) => <List title={list.title} cards={list.cards} key={list.id} />);
+  const params = useParams();
   return (
     <div>
       <h1>{state.title}</h1>
+      <h1>{params.id}</h1>
       <div className="board-container">
         <div className="board-container-row">
           {lists}

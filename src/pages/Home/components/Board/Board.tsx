@@ -11,7 +11,7 @@ function Board(props: { title: string }) {
   const { title } = props;
   return (
     <div className="home-board-container" style={backgroundStyle}>
-      <div className="board-title">Доска {title}</div>
+      <div className="board-title">{title}</div>
     </div>
   );
 }
