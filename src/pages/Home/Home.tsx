@@ -17,7 +17,7 @@ const state = {
 function Home() {
   const boards = state.boards.map((board) => (
     <Link to={`/board/${board.id}`} key={board.id}>
-      <Board title={board.title} key={board.id} />
+      <Board title={board.title} />
     </Link>
   ));
   return (
