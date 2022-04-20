@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ import './home.scss';
 import { IBoard } from '../../common/interfaces/IBoard';
 import { getBoards } from '../../store/modules/boards/actions';
 
-const state = {
+const state2 = {
   boards: [
     { id: 1, title: 'покупки' },
     { id: 2, title: 'подготовка к свадьбе' },
@@ -19,39 +19,42 @@ const state = {
 };
 
 type PropsType = {
-  // eslint-disable-next-line react/no-unused-prop-types
   boards: IBoard[];
+  getBoards: () => Promise<void>;
 };
 
 type StateType = {
-  boards: IBoard;
+  boards: IBoard[];
 };
 
 class Home extends React.Component<PropsType, StateType> {
-  boards = state.boards.map((board) => (
+  boards2 = state2.boards.map((board) => (
     <Link to={`/board/${board.id}`} key={board.id}>
       <Board title={board.title} />
     </Link>
   ));
 
+  async componentDidMount() {
+    await this.props.getBoards();
+  }
+
   render() {
-    getBoards();
     return (
       <div className="home-container">
         <h1>Мои доски</h1>
         <div className="boards-container">
-          {this.boards}
+          {this.boards2}
           <a className="add-board">
             <FontAwesomeIcon icon={faAdd} />
             <span>Добавить доску</span>
           </a>
         </div>
-        <div>{JSON.stringify(this.boards)}</div>
+        <div>{JSON.stringify(this.props.boards)}</div>
       </div>
     );
   }
 }
-const mapStateToProps = (state: { boards: PropsType }) => ({
+const mapStateToProps = (state: StateType) => ({
   ...state.boards,
 });
-export default connect(mapStateToProps, {})(Home);
+export default connect(mapStateToProps, { getBoards })(Home);

@@ -5,7 +5,5 @@ const initialState = {
 };
 
 export default function reducer(action: { type: string; payload: IBoard }, state = initialState) {
-  // eslint-disable-next-line no-console
-  console.log('Second Checkpoint of console');
   return { ...state };
 }
