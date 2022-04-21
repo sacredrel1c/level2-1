@@ -6,4 +6,5 @@ const initialState = {
 
 export default function reducer(action: { type: string; payload: IBoard }, state = initialState) {
   return { ...state };
+
 }
