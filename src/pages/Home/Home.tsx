@@ -10,7 +10,7 @@ import { getBoards } from '../../store/modules/boards/actions';
 
 type PropsType = {
   boards: IBoard[];
-  getBoards: () => Promise<void>;
+  pullBoards: () => Promise<void>;
 };
 
 type StateType = {
@@ -19,9 +19,8 @@ type StateType = {
 
 class Home extends React.Component<PropsType> {
   async componentDidMount() {
-    // eslint-disable-next-line @typescript-eslint/no-shadow
-    const { getBoards } = this.props;
-    await getBoards();
+    const { pullBoards } = this.props;
+    await pullBoards();
   }
 
   render() {
@@ -53,4 +52,4 @@ class Home extends React.Component<PropsType> {
 const mapStateToProps = (state: StateType) => ({
   ...state.boards,
 });
-export default connect(mapStateToProps, { getBoards })(Home);
+export default connect(mapStateToProps, { pullBoards: getBoards })(Home);
