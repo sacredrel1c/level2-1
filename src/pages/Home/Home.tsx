@@ -26,7 +26,7 @@ class Home extends React.Component<PropsType> {
   render() {
     const { boards } = this.props;
     let boardsList: JSX.Element[] = [];
-    if (Array.isArray(boards)) {
+    if (boards && boards.length > 0) {
       boardsList = boards.map((board) => (
         <Link to={`/board/${board.id}`} key={board.id}>
           <Board title={board.title} />
