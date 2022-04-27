@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home boards={[]} />} />
-        <Route path="board/:id" element={<Board />} />
+        <Route path="board/:id" element={<Board lists={[]} />} />
       </Routes>
     </div>
   );
