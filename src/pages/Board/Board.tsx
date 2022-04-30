@@ -9,7 +9,8 @@ import { getLists } from '../../store/modules/board/actions';
 
 type PropsType = {
   lists: IList[];
-  pullLists: () => Promise<void>;
+  pullLists: (id: number) => Promise<void>;
+  id: number;
 };
 
 type StateType = {
@@ -18,8 +19,8 @@ type StateType = {
 
 class Board extends React.Component<PropsType> {
   async componentDidMount() {
-    const { pullLists } = this.props;
-    await pullLists();
+    const { pullLists, id } = this.props;
+    await pullLists(id);
   }
 
   render() {

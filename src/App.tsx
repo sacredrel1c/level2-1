@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Board from './pages/Board/Board';
+import BoardWrapper from './pages/Board/BoardWrapper';
 import Home from './pages/Home/Home';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home boards={[]} />} />
-        <Route path="board/:id" element={<Board lists={[]} />} />
+        <Route path="board/:id" element={<BoardWrapper />} />
       </Routes>
     </div>
   );
