@@ -7,6 +7,7 @@ import Board from './components/Board/Board';
 import './home.scss';
 import { IBoard } from '../../common/interfaces/IBoard';
 import { getBoards } from '../../store/modules/boards/actions';
+import CreateBoard from './components/CreateBoard/CreateBoard';
 
 type PropsType = {
   boards: IBoard[];
@@ -15,16 +16,22 @@ type PropsType = {
 
 type StateType = {
   boards: IBoard[];
+  visible: boolean;
 };
 
-class Home extends React.Component<PropsType> {
+class Home extends React.Component<PropsType, StateType> {
   async componentDidMount() {
     const { pullBoards } = this.props;
+    // eslint-disable-next-line react/no-unused-state
+    this.setState({ visible: false });
     await pullBoards();
   }
 
   render() {
     const { boards } = this.props;
+    const { visible } = this.state || '';
+    // eslint-disable-next-line no-console
+    console.log(visible);
     let boardsList: JSX.Element[] = [];
     if (boards && boards.length > 0) {
       boardsList = boards.map((board) => (
@@ -43,8 +50,8 @@ class Home extends React.Component<PropsType> {
             <FontAwesomeIcon icon={faAdd} />
             <span>Добавить доску</span>
           </a>
+          <CreateBoard {...visible} />
         </div>
-        <div>{JSON.stringify({ boardsList })}</div>
       </div>
     );
   }
