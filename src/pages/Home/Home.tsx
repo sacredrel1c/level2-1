@@ -7,7 +7,7 @@ import Board from './components/Board/Board';
 import './home.scss';
 import { IBoard } from '../../common/interfaces/IBoard';
 import { getBoards } from '../../store/modules/boards/actions';
-import CreateBoard from './components/CreateBoard/CreateBoard';
+import Modal from './components/Modal/Modal';
 
 type PropsType = {
   boards: IBoard[];
@@ -23,13 +23,16 @@ class Home extends React.Component<PropsType, StateType> {
   async componentDidMount() {
     const { pullBoards } = this.props;
     // eslint-disable-next-line react/no-unused-state
-    this.setState({ visible: false });
     await pullBoards();
   }
 
+  setVisible = (visible: boolean) => {
+    this.setState({ visible });
+  };
+
   render() {
     const { boards } = this.props;
-    const { visible } = this.state || '';
+    const { visible } = this.state || false;
     // eslint-disable-next-line no-console
     console.log(visible);
     let boardsList: JSX.Element[] = [];
@@ -46,12 +49,19 @@ class Home extends React.Component<PropsType, StateType> {
         <h1>Мои доски</h1>
         <div className="boards-container">
           {boardsList}
-          <a className="add-board">
+          <a
+            className="add-board"
+            onClick={() => {
+              this.setVisible(true);
+            }}
+          >
             <FontAwesomeIcon icon={faAdd} />
             <span>Добавить доску</span>
           </a>
-          <CreateBoard {...visible} />
         </div>
+        <Modal visible={visible} setVisible={this.setVisible}>
+          <div>ola ola</div>
+        </Modal>
       </div>
     );
   }
