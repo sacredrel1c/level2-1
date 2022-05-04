@@ -22,7 +22,6 @@ type StateType = {
 class Home extends React.Component<PropsType, StateType> {
   async componentDidMount() {
     const { pullBoards } = this.props;
-    // eslint-disable-next-line react/no-unused-state
     await pullBoards();
   }
 
@@ -32,9 +31,8 @@ class Home extends React.Component<PropsType, StateType> {
 
   render() {
     const { boards } = this.props;
-    const { visible } = this.state || false;
-    // eslint-disable-next-line no-console
-    console.log(visible);
+    let visible = false;
+    if (this.state) ({ visible } = this.state);
     let boardsList: JSX.Element[] = [];
     if (boards && boards.length > 0) {
       boardsList = boards.map((board) => (
@@ -58,10 +56,10 @@ class Home extends React.Component<PropsType, StateType> {
             <FontAwesomeIcon icon={faAdd} />
             <span>Добавить доску</span>
           </a>
+          <Modal visible={visible} setVisible={this.setVisible}>
+            <div>ola ola</div>
+          </Modal>
         </div>
-        <Modal visible={visible} setVisible={this.setVisible}>
-          <div>ola ola</div>
-        </Modal>
       </div>
     );
   }

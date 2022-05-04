@@ -50,8 +50,6 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "jsx-uses-vars": 2,
-    "jsx-uses-react": true,
     "@typescript-eslint/no-explicit-any": 2,
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
